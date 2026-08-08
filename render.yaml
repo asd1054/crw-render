@@ -1,12 +1,13 @@
 services:
   - type: web
-    name: crw-scraper
+    name: crw-render
     runtime: docker
     repo: https://github.com/asd1054/crw-render
     plan: free
     region: oregon
     dockerfilePath: ./Dockerfile
+    port: 3000
     healthCheckPath: /health
     envVars:
-      - key: PORT
-        value: 3000
+      - key: CRW_SERVER__PORT
+        value: "3000"
